@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <title>Cipher Visualizer</title>
+</head>
+<body>
+    <header>
+        <div class="title">
+            <p>Kryptor</p>
+        </div>
+    </header>
+    <div class="body">
+        <div class="dropdown">
+            <select onchange="displayAlgo()" name="algorithm" id="algo-select">
+                <option disabled selected hidden>chose an algorithm</option>
+                <option value="ceaser-cipher" >Ceaser Cipher</option>
+                <option value="vigenere-cipher">Vigenere cipher</option>
+            </select>
+            <button id="submit-button" onclick="encrypt()">Submit</button>
+        </div>
+
+        <div class="mainPage">
+            <div class="container" id="input-text">
+                <p id= "container-title">Input</p><br>
+                <textarea  class = "text-box" id="input-string" >Sally sells sea shells by the sea shore</textarea>
+            </div>
+            <div class="container" id="algo-param">
+                <p id="container-title">Algorithm</p><br>
+                <div class="cipher" id="ceaser-cipher">
+                    <div class="form">
+                        <form>
+                            <label>Alphabet</label><br>
+                            <textarea  class = "cipher-input" id="ceaser-input-alphabet" >abcdefghijklmnopqrstuvwxyz</textarea><br><br>
+                            <label>Shift</label><br>
+                            <input type="number" class="cipher-input" id="ceaser-input-shift" min="1" max="26">
+                        </form>
+                    </div>
+                </div> 
+                <div class="cipher" id="vigenere-cipher">
+                    <div class="form">
+                        <form>
+                            <label>Alphabet</label><br>
+                            <textarea  class = "cipher-input" id="vigenere-input-alphabet" >abcdefghijklmnopqrstuvwxyz</textarea><br><br>
+                            <label>Key</label><br>
+                            <input class="cipher-input" id="vigenere-input-key">
+                        </form>
+                    </div>
+                </div> 
+            </div>
+            <div class="container" id="output-text">
+                <p id= "container-title">Output</p><br>
+                <textarea  class = "text-box" id="output-string"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
